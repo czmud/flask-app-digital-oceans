@@ -5,13 +5,15 @@ DB_HOST = os.getenv("DB_HOST")
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_SCHEMA = os.getenv("DB_SCHEMA")
+DB_PORT = int(os.getenv("DB_PORT"))
 
 class MySQLConnection:
     def __init__(self):
         connection = pymysql.connect(host = DB_HOST,
+                                    port = DB_PORT,
                                     user = DB_USER, 
                                     password = DB_PASSWORD, 
-                                    db = DB_SCHEMA,
+                                    database = DB_SCHEMA,
                                     charset = 'utf8mb4',
                                     cursorclass = pymysql.cursors.DictCursor,
                                     autocommit = True)
