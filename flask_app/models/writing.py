@@ -9,6 +9,6 @@ class Writing:
 
     @classmethod
     def save( cls, data ):
-        query_string = "INSERT INTO writings ( title, description, content ) \
+        query_string = "INSERT INTO creations ( title, description, content ) \
             VALUES (%(title)s, %(description)s, %(content)s);"
         return connectToMySQL().query_db(query_string, data)
