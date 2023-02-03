@@ -26,3 +26,4 @@ class Writing:
         query_string = "SELECT * FROM writings WHERE id > 0;"
 
         return connectToMySQL().query_db(query_string)
+    # taller than this
