@@ -16,3 +16,9 @@ def save_new_writing():
 
     writing.Writing.save( data )
     return redirect('/writings/writing-form')
+
+@app.route('/db-view')
+def view_database():
+    stuff = writing.Writing.query_db()
+    print(stuff)
+    return render_template("new-writing-form.html")
