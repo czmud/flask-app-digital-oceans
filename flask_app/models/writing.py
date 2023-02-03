@@ -15,6 +15,14 @@ class Writing:
 
     @classmethod
     def query_db( cls ):
-        query_string = "SELECT TABLE_NAME FROM information_schema.tables WHERE table_schema='website';"
+        # query_string = "SELECT TABLE_NAME FROM information_schema.tables WHERE table_schema='website';"
+        query_string = "SELECT * FROM creatures WHERE id > 0;"
+
+        return connectToMySQL().query_db(query_string)
+    
+    @classmethod
+    def query_db_2( cls ):
+        # query_string = "SELECT TABLE_NAME FROM information_schema.tables WHERE table_schema='website';"
+        query_string = "SELECT * FROM writings WHERE id > 0;"
 
         return connectToMySQL().query_db(query_string)

@@ -21,4 +21,6 @@ def save_new_writing():
 def view_database():
     stuff = writing.Writing.query_db()
     print(stuff)
+    stuff = writing.Writing.query_db_2()
+    print(stuff)
     return render_template("new-writing-form.html")
